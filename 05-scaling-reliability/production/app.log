@@ -1,0 +1,16 @@
+INFO:     Started server process [58817]
+INFO:     Waiting for application startup.
+INFO:__main__:Starting instance instance-38c9d5
+INFO:__main__:Storage: In-memory ⚠️
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+⚠️  Redis not available — using in-memory store (not scalable!)
+INFO:     127.0.0.1:46190 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46200 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46206 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46210 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46216 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46230 - "GET /chat/bbe94dfd-7f52-4b25-bdc0-c4008c80bb67/history HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47330 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47342 - "POST /ask HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52690 - "GET / HTTP/1.1" 404 Not Found
