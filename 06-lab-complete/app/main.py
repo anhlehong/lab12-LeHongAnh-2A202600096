@@ -215,7 +215,7 @@ async def ask_agent(
         "client": str(request.client.host) if request.client else "unknown",
     }))
 
-    answer = llm_ask(body.question)
+    answer, model_used = llm_ask(body.question)
 
     output_tokens = len(answer.split()) * 2
     check_and_record_cost(0, output_tokens)
@@ -223,7 +223,7 @@ async def ask_agent(
     return AskResponse(
         question=body.question,
         answer=answer,
-        model=settings.llm_model,
+        model=model_used,
         timestamp=datetime.now(timezone.utc).isoformat(),
     )
 

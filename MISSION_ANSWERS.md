@@ -39,7 +39,7 @@
 
 ### Exercise 3.1: Railway deployment
 - URL: https://deploy-railway-production-1cb0.up.railway.app/
-- Screenshot: ![](Screenshot-Part03.pngi)
+- Screenshot: ![](Screenshot-Part03.png)
 ## Part 4: API Security
 
 ### Exercise 4.1-4.3: Test results
@@ -199,21 +199,23 @@ Total messages: 10
 
 Sản phẩm cuối cùng là một AI Agent hoàn chỉnh, không còn là mock LLM mà được tích hợp trực tiếp với **Google Gemini API**. Hệ thống đáp ứng đầy đủ các tiêu chuẩn bảo mật, hiệu suất và khả năng mở rộng.
 
-*   **Public URL:** [https://vinuni-ai-agent-v2-production.up.railway.app](https://vinuni-ai-agent-v2-production.up.railway.app)
-*   **Source Code Directory:** [/06-lab-complete](file:///home/anhle/vinuni/week_03/Day12/day12_ha-tang-cloud_va_deployment/06-lab-complete)
+*   **Public URL:** [https://vinuni-ai-agent-v2-production.up.railway.app/health](https://vinuni-ai-agent-v2-production.up.railway.app/health)
+*   **Source Code Directory:** 06-lab-complete/
+*   **Screenshot:** ![Screenshot-Part06](Screenshot-Part06.png)
+
 
 #### 🛠 Key Technologies & Features:
-- **LLM Engine:** Hoạt động thực tế bằng **Gemini 1.5 Flash** qua SDK chính thức của Google.
+- **LLM Engine:** Hoạt động thực tế bằng **Gemini 2.0 Flash** qua SDK chính thức của Google.
 - **Scalability:** Stateless design hỗ trợ scaling ngang qua Nginx Load Balancer.
 - **Security:** API Key Authentication, JWT Flow, và Rate Limiting bảo vệ hệ thống.
 - **Cost Management:** Cost Guard quản lý budget thực tế theo API usage token.
-- **Reliability:** Đầy đủ Liveness/Readiness probes và Graceful Shutdown xử lý SIGTERM.
+- **Reliability:** Đầy đủ Liveness/Readiness probes và Graceful Shutdown xử lý SIGTERM. Đặc biệt, hệ thống có cơ chế **Model Fallback (High Availability)**: Tự động xoay vòng qua danh sách 10+ model (Gemma, Gemini Flash Lite) khi gặp lỗi Quota (429), đảm bảo dịch vụ không bị gián đoạn.
 - **Deployment:** Containerized với Multi-stage build, triển khai trên hạ tầng Cloud (Railway).
 
 #### 🏗 Production Architecture:
 Hệ thống được thiết kế để chịu tải cao với cụm **Agent Instances** phân tán, kết nối với **Redis** để quản lý trạng thái tập trung, giúp duy trì lịch sử trò chuyện ổn định dù request được phục vụ bởi bất kỳ instance nào.
 
 ---
-*Hoàn thành Day 12 Lab — Building Real-World AI Agents on Cloud.*
+
 
 

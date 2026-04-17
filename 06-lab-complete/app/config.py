@@ -18,7 +18,8 @@ class Settings:
 
     openai_api_key: str = field(default_factory=lambda: os.getenv("OPENAI_API_KEY", ""))
     gemini_api_key: str = field(default_factory=lambda: os.getenv("GEMINI_API_KEY", ""))
-    llm_model: str = field(default_factory=lambda: os.getenv("LLM_MODEL", "gemini-1.5-flash"))
+    llm_model: str = field(default_factory=lambda: os.getenv("LLM_MODEL", "gemini-2.0-flash"))
+    fallback_models: list[str] = field(default_factory=lambda: os.getenv("FALLBACK_MODELS", "gemini-2.5-flash-lite,gemini-flash-lite-latest,gemma-3-27b-it,gemma-3-12b-it,gemma-3-4b-it,gemma-3-1b-it").split(","))
 
     # Security
     agent_api_key: str = field(default_factory=lambda: os.getenv("AGENT_API_KEY", "dev-key-change-me"))
