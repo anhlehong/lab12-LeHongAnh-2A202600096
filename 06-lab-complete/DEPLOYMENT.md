@@ -40,8 +40,7 @@ curl -i -X POST https://vinuni-ai-agent-v2-production.up.railway.app/ask \
 | `LLM_MODEL` | `gemini-2.0-flash` |
 | `FALLBACK_MODELS` | Configured for high availability |
 
-## Screenshots Guide
-Please place the following captures in the `screenshots/` folder:
+## Screenshots
 1. `screenshots/dashboard.png`
 ![](screenshots/dashboard.png)
 2. `screenshots/running.png`
